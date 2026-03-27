@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Browse Jobs</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">JobPortal</div>
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/post-job">Post Job</a>
+    </div>
+</nav>
+
+<div class="page-container">
+    <h2 class="page-title">Available Jobs</h2>
+
+    <div class="job-grid">
+        <div th:each="job : ${jobs}" class="job-card">
+            <h3 th:text="${job.title}"></h3>
+            <p><strong>Company:</strong> <span th:text="${job.company}"></span></p>
+            <p><strong>Location:</strong> <span th:text="${job.location}"></span></p>
+            <p th:text="${job.description}"></p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
